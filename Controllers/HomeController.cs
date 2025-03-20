@@ -44,7 +44,7 @@ namespace AntiXssTest1.Controllers
         [ValidateInput(false)] // 允許 HTML 輸入
         public ActionResult XssTest1(string userInput)
         {
-            ViewData["rawData"] = userInput;  // 傳遞未過濾的原始輸入
+            ViewData["rawData1"] = userInput;  // 傳遞未過濾的原始輸入
             return View();
         }
     }

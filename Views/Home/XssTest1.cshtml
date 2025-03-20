@@ -5,12 +5,10 @@
 
 <h2>XSS 測試 -過濾</h2>
 
-
-
 <!-- 過濾後輸入表單 -->
 <form method="post" action="@Url.Action("XssTest1", "Home")">
     <label>請輸入內容（過濾後）：</label>
-    <textarea name="userInput" rows="5" cols="50">@ViewData["rawData"]</textarea>
+    <textarea name="userInput" rows="5" cols="50">@ViewData["rawData1"]</textarea>
     <br />
     <button type="submit">送出（過濾後）</button>
 </form>
@@ -18,6 +16,6 @@
 <fieldset>
     <legend>✅ 經過過濾的 XSS 測試</legend>
     <div>
-        @Html.SanitizedRaw(ViewData["rawData"] as string)  @* ✅ 這裡顯示過濾後的安全內容 *@
+        @Html.SanitizedRaw(ViewData["rawData1"] as string)  @* ✅ 這裡顯示過濾後的安全內容 *@
     </div>
 </fieldset>
