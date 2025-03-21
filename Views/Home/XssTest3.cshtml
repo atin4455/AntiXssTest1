@@ -16,6 +16,6 @@
 <fieldset>
     <legend>❌ 未過濾的 XSS 測試</legend>
     <div>
-        @Html.Raw(System.Web.HttpUtility.HtmlDecode(System.Web.HttpUtility.HtmlEncode(ViewData["rawData3"]))) @* ⚠️ 這樣會有 XSS 風險！ *@
+        @Html.Raw(System.Web.HttpUtility.HtmlDecode(System.Web.HttpUtility.HtmlEncode(ViewData["rawData3"]))) @* ⚠️ 這樣會有 XSS 風險！,但不會被抓到 *@
     </div>
 </fieldset>
