@@ -15,5 +15,14 @@ namespace AntiXssTest.Models
         {
             return MvcHtmlString.Create(_sanitizer.Sanitize(input as string ?? ""));
         }
+
+        public static MvcHtmlString CustomRaw(this HtmlHelper htmlHelper, object input)
+        {
+            // 檢查 input 是否為 null，並轉換為字串
+            string content = input as string ?? "";
+
+            // 返回 MvcHtmlString，讓它在視圖中直接渲染 HTML
+            return MvcHtmlString.Create(content);
+        }
     }
 }

@@ -31,6 +31,10 @@ namespace AntiXssTest1.Controllers
             return View();
         }
 
+        public ActionResult XssTest2()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ValidateInput(false)] // 允許 HTML 輸入
@@ -45,6 +49,14 @@ namespace AntiXssTest1.Controllers
         public ActionResult XssTest1(string userInput)
         {
             ViewData["rawData1"] = userInput;  // 傳遞未過濾的原始輸入
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateInput(false)] // 允許 HTML 輸入
+        public ActionResult XssTest2(string userInput)
+        {
+            ViewData["rawData2"] = userInput;  // 傳遞未過濾的原始輸入
             return View();
         }
     }
