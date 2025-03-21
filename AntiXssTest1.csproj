@@ -208,6 +208,7 @@
     <Content Include="Views\Home\XssTest.cshtml" />
     <Content Include="Views\Home\XssTest1.cshtml" />
     <Content Include="Views\Home\XssTest2.cshtml" />
+    <Content Include="Views\Home\XssTest3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

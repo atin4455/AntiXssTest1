@@ -1,0 +1,21 @@
+﻿@using AntiXssTest.Models
+@{
+    Layout = null;
+}
+
+<h2>XSS 測試 - 未過濾</h2>
+
+<!-- 原始輸入表單 -->
+<form method="post" action="@Url.Action("XssTest3", "Home")">
+    <label>請輸入內容（未過濾）：</label>
+    <textarea name="userInput" rows="5" cols="50">@ViewData["rawData3"]</textarea>
+    <br />
+    <button type="submit">送出（未過濾）</button>
+</form>
+
+<fieldset>
+    <legend>❌ 未過濾的 XSS 測試</legend>
+    <div>
+      @System.Web.HttpUtility.HtmlDecode(@Html.Encode(ViewData["rawData3"])) @* ⚠️ 這樣會有 XSS 風險！ *@
+    </div>
+</fieldset>
